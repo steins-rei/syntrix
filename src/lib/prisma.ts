@@ -8,11 +8,15 @@ import { PrismaPg } from "@prisma/adapter-pg";
  * READ (GET): $replica
  */
 
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL!,
+})
+
 const replica = new PrismaPg({
   connectionString: process.env.DATABASE_REPLICA_URL,
 });
 
-const extended = new PrismaClient()
+const extended = new PrismaClient({ adapter })
   .$extends(withAccelerate())
   .$extends(
     readReplicas({
