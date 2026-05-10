@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Default Starter",
-  description: "A default starter template by [ STEINS REI ]",
+  title: "Syntrix",
+  description: "An e-commerce tech website",
 };
 
 export default function RootLayout({
